@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supprimer son compte — Baby Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF3E6;--coral:#FF6B7F;--ink:#3B2F33;--muted:#7A6A6F;--link:#D63F5A;--card:#FFFBF7;--line:#F3DCCF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+.blobs{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.blobs span{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55}
+a{color:var(--link)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
+.brand img{width:44px;height:44px;border-radius:12px;box-shadow:0 4px 14px rgba(214,63,90,.18)}
+nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:700;font-size:15px}
+nav a:hover{color:var(--link)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 60px}
+h1{font-size:46px;line-height:1.12;margin:0 0 18px;font-weight:800}
+h1 em{font-style:normal;color:var(--coral)}
+.lead{font-size:19px;color:var(--muted);margin:0 0 26px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-weight:800;padding:14px 24px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(255,107,127,.35)}
+.btn.soon{cursor:default}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+.phones{position:relative;height:520px}
+.phones img{position:absolute;width:230px;border-radius:30px;border:6px solid #fff;box-shadow:0 18px 40px rgba(120,60,70,.18)}
+.phones img:nth-child(1){left:0;top:40px;transform:rotate(-6deg)}
+.phones img:nth-child(2){right:0;top:0;transform:rotate(5deg)}
+section{padding:40px 0}
+h2{font-size:30px;margin:0 0 8px;font-weight:800}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.card .dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:20px;margin-bottom:10px}
+.card h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.price{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:620px}
+.price .card{text-align:center}
+.price strong{display:block;font-size:30px;color:var(--coral)}
+.legal{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px 38px;margin-bottom:28px}
+.legal h2{font-size:26px}
+.legal h3{font-size:18px;margin:26px 0 6px}
+.legal p,.legal li{font-size:16px}
+.legal ul{padding-left:22px}
+.updated{color:var(--muted);font-size:14px;margin:0 0 10px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tabs a{text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.tabs a.on{background:var(--coral);border-color:var(--coral);color:#fff}
+.view{display:none}.view.on{display:block}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;text-align:center}
+footer a{margin:0 8px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.phones{height:430px;max-width:420px;margin:0 auto;width:100%}.phones img{width:190px}h1{font-size:36px}.grid{grid-template-columns:1fr 1fr}nav{display:none}.legal{padding:24px 20px}}
+@media(max-width:520px){.grid,.price{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="blobs"><span style="width:420px;height:420px;background:#FFD3DA;left:-120px;top:-80px"></span><span style="width:380px;height:380px;background:#E8E4F9;right:-100px;top:160px"></span><span style="width:340px;height:340px;background:#DCF0E4;left:20%;bottom:-120px"></span><span style="width:300px;height:300px;background:#FAF1D8;right:15%;bottom:10%"></span></div>
+<div class="wrap">
+<header>
+  <a class="brand" href="index.html"><img src="icon.webp" alt="">Baby Board</a>
+  <nav><a href="index.html">L'appli</a><a href="cgu.html">Conditions</a><a href="confidentialite.html">Confidentialité</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<main>
+
+<div class="view on" id="v-legal">
+  <div class="tabs"><a href="cgu.html" data-t="cgu">Conditions d'utilisation</a><a href="confidentialite.html" data-t="confidentialite">Confidentialité</a><a href="suppression.html" data-t="suppression" class="on">Supprimer son compte</a><a href="mentions-legales.html" data-t="mentions">Mentions légales</a></div>
+
+  <article class="legal sub-view" id="t-suppression" style="display:block">
+    <h2>Supprimer son compte Baby Board</h2>
+    <p class="updated">Dernière mise à jour : 6 novembre 2026</p>
+    <h3>Depuis l'application</h3>
+    <ul>
+      <li>Ouvrez Baby Board et allez dans le menu <strong>Plus</strong>, puis <strong>Compte</strong>.</li>
+      <li>Si vous le souhaitez, exportez d'abord vos données (PDF ou JSON).</li>
+      <li>Appuyez sur <strong>Supprimer mon compte</strong> et confirmez en recopiant la phrase demandée.</li><li>Si d'autres parents font partie de votre famille, retirez-les d'abord depuis <strong>Parents et partage</strong> : cela évite d'effacer leurs données.</li>
+    </ul>
+    <h3>Ce qui est supprimé</h3>
+    <p>Votre compte et, si c'est le dernier compte de la famille, l'espace familial et l'ensemble des données associées : profils des bébés, événements, mesures, objectifs, photos et documents. La suppression est définitive et ne peut pas être annulée.</p>
+    <h3>Sans accès à l'application</h3>
+    <p>Écrivez à <a href="mailto:babyboard@outlook.fr">babyboard@outlook.fr</a> (babyboard@outlook.fr) depuis l'adresse e-mail de votre compte, avec l'objet « Suppression de compte ». La demande est traitée sous 30 jours.</p>
+    <p>Pensez à résilier votre abonnement dans Google Play : la suppression du compte n'arrête pas l'abonnement.</p>
+  </article>
+</div>
+
+</main>
+
+<footer>
+  <a href="cgu.html">Conditions d'utilisation</a>·<a href="confidentialite.html">Confidentialité</a>·<a href="suppression.html">Supprimer son compte</a>·<a href="mentions-legales.html">Mentions légales</a>·<a href="contact.html">Contact</a>
+  <p>© 2026 Baby Board — Maxime Tixier, EI</p>
+</footer>
+</div>
+</body>
+</html>
